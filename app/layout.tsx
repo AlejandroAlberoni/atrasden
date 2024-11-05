@@ -25,19 +25,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <HiBars3 className="text-white text-3xl transform transition-transform duration-200 hover:rotate-90 active:scale-90" />
         </a>
 
-        <nav
-          id="menu"
-          className={`
-            fixed inset-0 bg-black flex flex-col items-center justify-center z-10
-            transform translate-y-full opacity-0 invisible transition-all duration-300
-            target:translate-y-0 target:opacity-100 target:visible
-            ${montserrat.className}
-          `}
-        >
-          <a
-            href="#"
-            className="absolute top-4 right-6 text-white text-3xl cursor-pointer"
-          >
+        <nav id="menu" className={`fixed inset-0 bg-black flex flex-col items-center justify-center z-10 transform translate-y-full opacity-0 invisible transition-all duration-300 target:translate-y-0 target:opacity-100 target:visible ${montserrat.className}`}>
+          <a href="#" className="absolute top-4 right-6 text-white text-3xl cursor-pointer">
             <MdClose />
           </a>
 
@@ -49,7 +38,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </li>
             <li>
               <a href="#skills" className="hover:text-gray-400">
-                Projects
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#projects" className="hover:text-gray-400">
+                Skills
               </a>
             </li>
             <li>
