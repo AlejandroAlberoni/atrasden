@@ -1,20 +1,20 @@
 import Home from './home';
 import Skills from './skills';
+import Projects from './projects';
 import Contact from './contact';
-import Author from './author';
 
 export default function Page() {
 
   return (
     <div className='flex flex-col items-center'>
 
-      <Home />
+      <Home /> 
 
       <Skills />
 
-      <Contact />
+      <Projects />
 
-      <Author />
+      <Contact />
 
     </div>
   );

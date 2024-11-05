@@ -43,17 +43,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </li>
             <li>
               <a href="#projects" className="hover:text-gray-400">
-                Skills
+                Projects
               </a>
             </li>
             <li>
               <a href="#contact" className="hover:text-gray-400">
                 Contact
-              </a>
-            </li>
-            <li>
-              <a href="#author" className="hover:text-gray-400">
-                Author
               </a>
             </li>
           </ul>

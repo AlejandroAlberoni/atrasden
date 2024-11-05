@@ -1,19 +1,17 @@
 import React from 'react'
-import { Space_Grotesk, Righteous } from 'next/font/google'
+import { Righteous } from 'next/font/google'
 
-const spaceGrotesk = Space_Grotesk({
-    subsets: ['latin'],
-    weight: ['700'],
-})
 const righteous = Righteous({
-    subsets: ['latin'],
-    weight: ['400'],
+  subsets: ['latin'],
+  weight: ['400'],
 })
 
 const Contact = () => {
   return (
     <section id='contact'>
-        <h1>Contact</h1>
+      <h1 className={`${righteous.className} text-3xl lg:text-6xl font-bold text-center mb-20 tracking-widest opacity-100 animate-[fadeIn_0.5s_ease_forwards]`}>
+        
+      </h1>
     </section>
   )
 }

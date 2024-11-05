@@ -20,11 +20,8 @@ const skillsData = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="container mx-auto px-4 py-20">
-      <h1
-        className={`${righteous.className} text-3xl lg:text-6xl font-bold text-center mb-20 tracking-widest
-                    opacity-0 animate-[fadeIn_0.5s_ease_forwards]`}
-      >
+    <section id="skills" className="container mx-auto">
+      <h1 className={`${righteous.className} text-3xl lg:text-6xl font-bold text-center mb-16 lg:mb-36 tracking-widest opacity-0 animate-[fadeIn_0.5s_ease_forwards]`}>
         Skill Stack
       </h1>
       
