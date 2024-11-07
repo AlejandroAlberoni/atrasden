@@ -1,13 +1,11 @@
-import Home from './home';
-import Skills from './skills';
-import Projects from './projects';
-import Contact from './contact';
+import Home from "./home";
+import Skills from "./skills";
+import Projects from "./projects";
+import Contact from "./contact";
 
 export default function Page() {
-
   return (
-    <div className='flex flex-col items-center space-y-40'>
-
+    <div className="flex flex-col items-center space-y-80">
       <Home />
 
       <Skills />
@@ -15,7 +13,6 @@ export default function Page() {
       <Projects />
 
       <Contact />
-
     </div>
   );
 }

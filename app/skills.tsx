@@ -21,11 +21,11 @@ const skillsData = [
 export default function Skills() {
   return (
     <section id="skills" className="container mx-auto">
-      <h1 className={`${righteous.className} text-3xl lg:text-6xl font-bold text-center mb-16 lg:mb-36 tracking-widest opacity-0 animate-[fadeIn_0.5s_ease_forwards]`}>
+      <h1 className={`${righteous.className} text-white text-3xl lg:text-6xl font-bold text-center tracking-widest select-none`}>
         Skill Stack
       </h1>
       
-      <div className="flex flex-wrap justify-center gap-6 lg:gap-12 justify-items-center">
+      <div className="flex flex-wrap justify-center gap-6 lg:gap-12 justify-items-center mt-16 lg:mt-36">
         {skillsData.map((skill, index) => (
           <SkillCard
             icon={skill.icon}
@@ -51,7 +51,7 @@ export default function Skills() {
 function SkillCard({ icon, name, index }: { icon: React.ReactNode, name: string, index: number }) {
   return (
     <figure
-      className="group relative w-32 h-40 lg:w-60 lg:h-40 rounded-md lg:rounded-xl overflow-hidden cursor-pointer bg-white shadow-lg
+      className="group relative w-32 h-40 lg:w-60 lg:h-40 rounded-md lg:rounded-xl overflow-hidden cursor bg-white shadow-lg
                  transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
       style={{
         animation: `fadeIn 0.5s ease forwards ${index * 0.2}s`,
@@ -59,10 +59,6 @@ function SkillCard({ icon, name, index }: { icon: React.ReactNode, name: string,
         transform: 'translateY(20px)',
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/5 group-hover:to-black/20 transition-all duration-500" />
-      
-      <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 blur-sm transition-all duration-500 animate-pulse" />
-      
       <div className="absolute inset-0 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:filter group-hover:brightness-110">
         {icon}
       </div>
