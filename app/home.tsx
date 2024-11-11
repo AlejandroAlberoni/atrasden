@@ -35,16 +35,16 @@ const Home = function () {
         <div
           className={`${spaceGrotesk.className} mx-10 lg:mx-0 text-center text-white text-[36px] lg:text-[48px] mt-[50%] lg:mt-20 antialiased z-[2] pointer-events-none`}
         >
-          <motion.p initial={{opacity: 0, x: -300}} animate={{opacity:1, x: 0}} transition={{duration: 0.5}}>Welcome to my personal and portfolio website.</motion.p>
-          <motion.p initial={{opacity: 0, x: -200}} animate={{opacity:1, x: 0}} transition={{duration: 0.7}}>I&apos;m a computer science bachelor located in Brazil.</motion.p>
+          <motion.p initial={{opacity: 0, x: -300}} animate={{opacity:1, x: 0}} transition={{duration: 0.6}}>Welcome to my personal and portfolio website.</motion.p>
+          <motion.p className={`mt-40 lg:mt-0`} initial={{opacity: 0, x: -200}} animate={{opacity:1, x: 0}} transition={{duration: 0.9}}>I&apos;m a <span className="text-violet-600">computer science</span> bachelor located in Brazil.</motion.p>
         </div>
         <motion.div
           className={`${spaceGrotesk.className} mx-10 mt-[50vh] lg:mt-[20%] text-[36px] lg:text-[48px] text-white z-[2] pointer-events-none`}
-          initial={{opacity: 0, x: -500}} animate={{opacity:1, x: 0}} transition={{duration: 0.9}}
+          initial={{opacity: 0, x: -500}} animate={{opacity:1, x: 0}} transition={{duration: 1.2}}
         >
           <p className="text-center lg:text-justify">
             &quot;This project blends creativity with purpose, showcasing my
-            skills in web design, front-end, and back-end development while
+            skills in <span className="text-pink-500">web design</span>, <span className="text-pink-500">front-end</span>, and <span className="text-pink-500">back-end</span> development while
             serving as a practical tool in my daily life.&ldquo;
           </p>
           <p className="float-end lg:mr-40 mt-10 lg:-mt-3">-ChatGPT</p>
