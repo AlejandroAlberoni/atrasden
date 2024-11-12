@@ -21,14 +21,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import {
-  AlertDialog,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogClose,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
 const righteous = Righteous({
@@ -117,18 +117,18 @@ function ProjectCard({
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6 flex-grow">
-        <AlertDialog>
-          <AlertDialogTrigger asChild>
+        <Dialog>
+          <DialogTrigger asChild>
             <Button variant="outline" className="w-full">
               Show images
             </Button>
-          </AlertDialogTrigger>
-          <AlertDialogContent className="max-w-3xl">
-            <AlertDialogHeader>
-              <AlertDialogTitle className="text-2xl font-bold mb-4 text-black">
+          </DialogTrigger>
+          <DialogContent className="max-w-3xl">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold mb-4 text-black">
                 {title}
-              </AlertDialogTitle>
-            </AlertDialogHeader>
+              </DialogTitle>
+            </DialogHeader>
             {imgsources?.length > 0 && (
               <Carousel className="w-full mx-auto text-black">
                 <CarouselContent>
@@ -150,13 +150,15 @@ function ProjectCard({
                 <CarouselNext className="-translate-x-5 md:translate-x-0" />
               </Carousel>
             )}
-            <AlertDialogFooter>
-              <AlertDialogCancel className="text-black">
+            <DialogFooter>
+            <DialogClose asChild>
+              <Button variant="outline" className="w-full text-black">
                 Close
-              </AlertDialogCancel>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+              </Button>
+            </DialogClose>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
         <div className="flex flex-wrap gap-2 justify-center">
           {techstack.map((value, index) => (
             <Badge key={index} variant="secondary">
