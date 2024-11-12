@@ -25,16 +25,10 @@ const Home = function () {
   //const splineScene = "https://prod.spline.design/H-tPD6CSV3Q69LNQ/scene.splinecode"
 
   return (
-    <section  id="home">
-      <div ref={ref} className={`absolute container`}>
-      {
-        inView &&
-        (<Spline
-          className={`h-full w-full z-[2]`}
-          scene={splineScene}
-          />)
-        }
-        </div>
+    <section id="home">
+      <div ref={ref} className={`absolute container h-screen w-screen`}>
+        {inView && <Spline scene={splineScene} />}
+      </div>
       <div className="flex flex-col select-none">
         <motion.div
           className={`${righteous.className} absolute mt-4 w-full text-xl text-center text-white text-nowrap z-[-1]`}
