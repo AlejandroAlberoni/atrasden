@@ -56,9 +56,10 @@ export default function Projects() {
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
         <ProjectCard
-          title="Confortímetro (Front-end)"
+          title="Front-end Application"
           description="This project was carried out at the Federal University of Pelotas (UFPEL) and consisted of creating the front-end of an application that shows the comfort statistics of an environment, which are stored by sensors in various locations in an institution. The application required graphical visualization: using the recharts library, several graphs were generated showing various metrics. User authentication using tokens (JWT): session control using cookies and middleware that protected features exclusive to administrators. Ordinary users only required graphical visualization of the metrics; administrators required management of ordinary users and management of the sensors. The application itself required integration with the back-end."
           link="https://github.com/gaia-ufpel/confortimetro_klimaa_frontend"
+          textlink="See on GitHub"
           techstack={[
             "React",
             "Next.js",
@@ -71,11 +72,23 @@ export default function Projects() {
           ]}
           imgsources={["/confortimetro1.png", "/confortimetro2.png"]}
         />
+        
+        <ProjectCard
+        title="UI Design"
+        description="This is a design made on Framer. This was made for personal project, and it was a great opportunity to learn more about Framer and its capabilities."
+        link="https://inspired-listening-309720.framer.app/"
+        textlink="See Framer Design"
+        techstack={["Framer"]}
+        imgsources={["/CriptoFidesLP01.png","/CriptoFidesLP02.png", "/CriptoFidesLP03.png", "/CriptoFidesLP04.png"]}
+        >
+
+        </ProjectCard>
 
         <ProjectCard
           title="Front-end portfolio"
           description="This is my previous portfolio, done for learning purposes. The project consisted of a creative design brainstorm using figma, and then implementation. This was my first front-end project using Next.js"
           link="https://github.com/AlejandroAlberoni/frontend-portfolio"
+          textlink="See on GitHub"
           techstack={["React", "Next.js", "Typescript", "TailwindCSS"]}
           imgsources={[
             "/legacyportfolio1.png",
@@ -93,12 +106,14 @@ function ProjectCard({
   title,
   description,
   link,
+  textlink,
   imgsources,
   techstack,
 }: {
   title: string;
   description: string;
   link: string;
+  textlink: string;
   imgsources: string[];
   techstack: string[];
 }) {
@@ -170,7 +185,7 @@ function ProjectCard({
       <CardFooter className="justify-center mt-auto">
         <Button asChild variant="outline" className="font-sans w-full">
           <Link href={link} target="_blank" rel="noopener noreferrer">
-            See on GitHub
+            {textlink}
           </Link>
         </Button>
       </CardFooter>
