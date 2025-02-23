@@ -40,9 +40,9 @@ const Contact = () => {
           <p
             className={`${ibm_plex_sans.className} text-lg lg:text-[20px] text-justify`}
           >
-            Feel free to send me an e-mail at any time;
-            I&apos;ll get back to you as soon as possible. I&apos;m open to listening and
-            contribute any ideas.
+            Feel free to send me an e-mail at any time; I&apos;ll get back to
+            you as soon as possible. I&apos;m open to listening and contribute
+            any ideas.
           </p>
         </div>
 
@@ -67,12 +67,14 @@ const Contact = () => {
               </p>
             </a>
             <section id="curriculum" className="text-center">
-              <button
+              <a
+                href="/curriculum.pdf"
+                target="_blank"
                 type="submit"
                 className="flex justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-rose-400 md:bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-rose-400 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-[3] px-4 py-2 overflow-hidden border-2 rounded-full group"
               >
                 See curriculum <ScrollText size={24} />
-              </button>
+              </a>
             </section>
             <div className="flex justify-center space-x-4">
               <Link

@@ -74,11 +74,11 @@ export default function Projects() {
         />
         
         <ProjectCard
-        title="UI Design"
-        description="This is a design made on Framer. This was made for personal project, and it was a great opportunity to learn more about Framer and its capabilities."
-        link="https://inspired-listening-309720.framer.app/"
-        textlink="See Framer Design"
-        techstack={["Framer"]}
+        title="UI Design and Front-end"
+        description="I designed this landing page entirely in Framer, focusing on smooth, responsive animations and interactions. For implementation, I used Next.js and deployed it seamlessly via Vercel."
+        link="https://criptofides-landingpage.vercel.app"
+        textlink="See live project"
+        techstack={["Framer", "Next.js", "Typescript", "TailwindCSS", "React"]}
         imgsources={["/CriptoFidesLP01.png","/CriptoFidesLP02.png", "/CriptoFidesLP03.png", "/CriptoFidesLP04.png"]}
         >
 
