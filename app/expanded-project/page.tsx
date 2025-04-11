@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -68,4 +68,11 @@ const Page = () => {
   );
 };
 
-export default Page;
+function SuspensePage(){
+  return (
+    <Suspense>
+      <Page />
+    </Suspense>
+  );
+}
+export default SuspensePage;

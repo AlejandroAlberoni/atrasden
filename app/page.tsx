@@ -1,5 +1,5 @@
 import Home from "./home";
-import Skills from "./skills";
+// import Author from "./author";
 import Project from "./project";
 import Contact from "./contact";
 
@@ -8,7 +8,7 @@ export default function Page() {
     <div className="flex flex-col items-center space-y-80">
       <Home />
 
-      <Skills />
+      {/* <Author /> */}
 
       <Project />
 

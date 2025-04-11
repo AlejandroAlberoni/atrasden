@@ -31,28 +31,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <MdClose />
           </Link>
 
-          <ul className="space-y-6 text-2xl">
-            <li>
-              <Link href="/#home" className="hover:text-gray-400">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/#skills" className="hover:text-gray-400">
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link href="/#projects" className="hover:text-gray-400">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="/#contact" className="hover:text-gray-400">
-                Contact
-              </Link>
-            </li>
-          </ul>
+          <div className="flex flex-col space-y-6 text-2xl">
+            {["Home", "Author", "Projects", "Contact"].map((item) => (
+                <a key={item} href={`/#${item.toLowerCase()}`} className="hover:text-gray-400">
+                  {item}
+                </a>
+            ))}
+          </div>
         </nav>
 
         {children}
