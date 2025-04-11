@@ -3,6 +3,7 @@ import "./globals.css";
 import { HiBars3 } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 import { Montserrat } from "next/font/google";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "A.T.R.A's Den",
@@ -26,30 +27,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
 
         <nav id="menu" className={`fixed inset-0 bg-black flex flex-col items-center justify-center z-10 transform translate-y-full opacity-0 invisible transition-all duration-300 target:translate-y-0 target:opacity-100 target:visible ${montserrat.className}`}>
-          <a href="#" className="absolute top-4 right-6 text-white text-3xl cursor-pointer">
+          <Link href="#" className="absolute top-4 right-6 text-white text-3xl cursor-pointer">
             <MdClose />
-          </a>
+          </Link>
 
           <ul className="space-y-6 text-2xl">
             <li>
-              <a href="#home" className="hover:text-gray-400">
+              <Link href="/#home" className="hover:text-gray-400">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#skills" className="hover:text-gray-400">
+              <Link href="/#skills" className="hover:text-gray-400">
                 Skills
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#projects" className="hover:text-gray-400">
+              <Link href="/#projects" className="hover:text-gray-400">
                 Projects
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#contact" className="hover:text-gray-400">
+              <Link href="/#contact" className="hover:text-gray-400">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

@@ -1,31 +1,17 @@
 "use client";
 import React from "react";
-import { Righteous, Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
+import { space_grotesk, ibm_plex_sans, ramabhadra } from "@/lib/fonts";
 import { Mail, ScrollText } from "lucide-react";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const righteous = Righteous({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-const space_grotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["700"],
-});
-
-const ibm_plex_sans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 const Contact = () => {
   return (
     <section id="contact">
       <h1
-        className={`${righteous.className} text-3xl lg:text-6xl font-bold text-center mb-20 tracking-widest select-none`}
+        className={`${ramabhadra.className} text-3xl lg:text-6xl font-bold text-center mb-20 tracking-widest select-none`}
       >
         Contact
       </h1>
@@ -80,12 +66,14 @@ const Contact = () => {
               <Link
                 href={`https://github.com/AlejandroAlberoni`}
                 target="_blank"
+                className="hover:text-gray-400 transition duration-150 ease-out"
               >
                 <SiGithub size={24} />
               </Link>
               <Link
                 href={`https://www.linkedin.com/in/alejandro-alberoni-8b95961b4/`}
                 target="_blank"
+                className="hover:text-gray-400 transition duration-150 ease-out"
               >
                 <SiLinkedin size={24} />
               </Link>

@@ -1,6 +1,6 @@
 import Home from "./home";
 import Skills from "./skills";
-import Projects from "./projects";
+import Project from "./project";
 import Contact from "./contact";
 
 export default function Page() {
@@ -10,7 +10,7 @@ export default function Page() {
 
       <Skills />
 
-      <Projects />
+      <Project />
 
       <Contact />
     </div>
