@@ -3,35 +3,20 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  montserrat,
-  space_grotesk,
-  ramabhadra,
-} from "@/lib/fonts";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
+import { ArrowBigRightDash } from "lucide-react";
+import { space_grotesk, ramabhadra } from "@/lib/fonts";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import {
-  Dialog,
-  DialogContent,
-  DialogFooter,
-  DialogClose,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
 export default function Project() {
@@ -48,12 +33,7 @@ export default function Project() {
           description="This project consisted of creating the front-end of an application that shows the comfort statistics of an environment, which are stored by sensors in various locations in an institution. The application required graphical visualization using the recharts library, various statistics were shown; also required user authentication with jwt tokens, cookies for session control. It was a great real-world experience."
           link="https://github.com/gaia-ufpel/confortimetro_klimaa_frontend"
           textlink="See on GitHub"
-          techstack={[
-            "React",
-            "Next.js",
-            "Typescript",
-            "shadcn/ui",
-          ]}
+          techstack={["React", "Next.js", "Typescript", "shadcn/ui"]}
           imgsources={["/confortimetro1.png", "/confortimetro2.png"]}
         />
 
@@ -62,12 +42,7 @@ export default function Project() {
           description="I designed this landing page entirely in Framer, focusing on smooth, responsive animations and interactions. For implementation, I used Next.js and deployed it via Vercel. The focus here was creating a visually appealing landind page for a crypto project."
           link="https://criptofides-landingpage.vercel.app"
           textlink="See live project"
-          techstack={[
-            "Framer",
-            "Next.js",
-            "Typescript",
-            "React",
-          ]}
+          techstack={["Framer", "Next.js", "Typescript", "React"]}
           imgsources={[
             "/CriptoFidesLP01.png",
             "/CriptoFidesLP02.png",
@@ -126,69 +101,45 @@ function ProjectCard({
         >
           {title}
         </CardTitle>
-        <CardDescription
-          className={`${montserrat.className} text-justify text-sm`}
-        >
-          {description.length > 180
-            ? `${description.slice(0, 180)}...`
-            : description}
-      <Link
-        className="ml-2 inline-block bg-white px-3 rounded-sm text-violet-600 border-2 border-violet-600 hover:scale-105 transition-all mt-10 mb-4 -rotate-[90deg] float-right"
-        href={`/expanded-project?${queryParams}`}
-        rel="noopener noreferrer"
-      >
-        More
-      </Link>
-        </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6 flex-grow">
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-full">
-              Show images
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-3xl">
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-bold mb-4 text-black">
-                {title}
-              </DialogTitle>
-            </DialogHeader>
-            {imgsources?.length > 0 && (
-              <Carousel className="w-full mx-auto text-black">
-                <CarouselContent>
-                  {imgsources.map((value, index) => (
-                    <CarouselItem key={index}>
-                      <div className="p-1">
-                        <Image
-                          src={value}
-                          width={800}
-                          height={400}
-                          alt={`Project image ${index + 1}`}
-                          className="rounded-lg object-cover w-full h-auto"
-                        />
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="translate-x-5 md:translate-x-0" />
-                <CarouselNext className="-translate-x-5 md:translate-x-0" />
-              </Carousel>
-            )}
-            <DialogFooter>
-              <DialogClose asChild>
-                <Button variant="outline" className="w-full text-black">
-                  Close
-                </Button>
-              </DialogClose>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+      <CardContent className="p-0 md:p-4">
+        <Swiper
+          modules={[Pagination, Navigation]}
+          pagination={{ clickable: true }}
+          navigation
+          spaceBetween={10}
+          slidesPerView={1}
+          className="w-full"
+        >
+          {imgsources.map((value, index) => (
+            <SwiperSlide key={index}>
+              <div className="p-1">
+                <Image
+                  src={value}
+                  width={800}
+                  height={400}
+                  alt={`Project image ${index + 1}`}
+                  className="md:rounded-sm object-cover w-full h-auto"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </CardContent>
-      <CardFooter className="justify-center mt-auto">
-        <Button asChild variant="outline" className="font-sans w-full">
+      <CardFooter className="flex items-center justify-center space-x-3">
+        <Button asChild variant="outline" className="font-sans">
           <Link href={link} target="_blank" rel="noopener noreferrer">
             {textlink}
+          </Link>
+        </Button>
+        <Button asChild variant="secondary" className="font-sans">
+          <Link
+            className="ml-2 inline-block bg-white hover:bg-violet-100 px-3 rounded-sm text-violet-600 border-2 border-violet-600 group"
+            href={`/expanded-project?${queryParams}`}
+            rel="noopener noreferrer"
+          >
+            Full description
+            <ArrowBigRightDash className="ml-1 group-hover:translate-x-2 transition-all duration-200 ease-out" />
           </Link>
         </Button>
       </CardFooter>
