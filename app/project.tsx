@@ -29,6 +29,14 @@ export default function Project() {
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
         <ProjectCard
+          title="Full-Stack - RAG Chat"
+          description="Full-stack application using Next.js and NestJS implementing semantic search (RAG) over PDF résumés. Allows upload and editing of résumés, extracts structured sentences via Gemini API, generates embeddings with Cohere AI, and answers questions based on cosine similarity. Authentication is restricted to a single administrator(me) via magic link. Front-end hosted on Vercel, back-end on Railway, with MongoDB as the database."
+          link="https://ragchat-frontend.vercel.app "
+          textlink="See production project"
+          techstack={["React", "Next.js", "Typescript", "shadcn/ui", "NestJS", "MongoDB"]}
+          imgsources={["/RagchatChat.png", "/RagchatAdmin.png", "/RagchatCurriculo.png", "/RagchatHome.png"]}
+        />
+        <ProjectCard
           title="Front-end Application"
           description="This project consisted of creating the front-end of an application that shows the comfort statistics of an environment, which are stored by sensors in various locations in an institution. The application required graphical visualization using the recharts library, various statistics were shown; also required user authentication with jwt tokens, cookies for session control. It was a great real-world experience."
           link="https://github.com/gaia-ufpel/confortimetro_klimaa_frontend"
